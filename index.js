@@ -24,6 +24,13 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
+app.use(cors({
+  origin: 'https://your-frontend-domain.com', // Allow only your frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type'],
+}));
+
+
 // MongoDB Connection
 const dbConnect = async () => {
     try {
