@@ -22,13 +22,12 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(express.json());
-
-
 app.use(cors({
-  origin: 'https://jobsxperts.com/', // Allow only your frontend domain
+  origin: '*', // Allow all origins for testing
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type'],
 }));
+
 
 
 // MongoDB Connection
